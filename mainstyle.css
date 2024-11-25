@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Press Start 2P",sans-serif;
+}
+body{
+    background-color: #FAB12F;
+}
+
+.header{
+    top: 0px;
+    padding: 15px 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #FEF3E2;
+    color: #1A1A19;
+    height: auto;
+}
+
+#header-text{
+    font-size: 5rem;
+    font-family: "Press Start 2P", sans-serif;
+    font-weight: 600;
+}
+
+.game-section{
+    width: calc(100% - 200px);
+    height: auto;
+    margin: 20px 100px 60px 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-box{
+    user-select: none;
+    width: 45%;
+    height: auto;
+    text-align: center;
+    padding: 10px 10px;
+    background-color: azure;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+}
+.game-box > a{
+    text-decoration: none;
+    color: #1A1A19;
+}
+
+.game-box:hover {
+    border: 2px solid #1A1A19;
+}
+
+.game-img{
+    width: 100%;
+    border-radius: 12px;
+}
+.game-text{
+    padding: 15px 0px;
+    font-size: 2rem;
+}

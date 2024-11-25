@@ -1,0 +1,51 @@
+@media (min-width:0px) and (max-width:767px){
+    .header{
+        padding: 5px 10px;
+        margin-bottom: 30px;
+    }
+    #header-text{
+        font-size: 3.5rem;
+        font-weight: 400;
+    }
+    .game-section{
+        width: 100%;
+        margin: 0px;
+        padding: 0px 80px;
+        flex-direction: column;
+    }
+    .game-box{
+        user-select: none;
+        width: 100%;
+        height: auto;
+        padding: 10px 10px;
+        margin-top: 10px ;
+        margin-bottom: 10px;
+    }
+    .game-text{
+        padding: 10px 0px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width:1800px){
+    .header{
+        padding: 35px 10px;
+        margin-bottom: 30px;
+    }
+    #header-text{
+        font-size: 8rem;
+        font-weight: 400;
+    }
+    .game-section{
+        width: calc(100%-200px);
+        margin: 80px 100px 120px 100px;
+    }
+    .game-box{
+        padding: 20px 20px;
+        border-radius: 15px;
+    }
+    .game-text{
+        padding: 25px;
+        font-size: 5.5rem;
+    }
+}
