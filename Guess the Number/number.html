@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Number Is</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Chewy&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Poppins&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header >
+        <h1 id="header-text">Number Is ?</h1>
+    </header>
+
+    <main>
+        <div id="left-section">
+            <div class="top" id="start">
+                <input id="start-value" class="startend-index" placeholder="start" type="text" required>
+            </div>
+            <div class="middle-path">
+                <h1 class="range-text">Please Range it!</h1>
+            </div>
+            <div class="bottom" id="end">
+                <input id="end-value" class="startend-index" placeholder="end" type="text" required>
+            </div>
+            <div class="get-range-button">
+                <button id="getrange-btn" onclick="">Set</button>
+            </div>
+        </div>
+
+        <div id="right-section">
+            <div class="range-text-box">
+                <h1 class="rangetext"></h1>
+            </div>
+            <div class="life-box">
+                <div class="left-lifecount">
+                    <img id="life-img" src="../Images/heart_520428.png" alt="heart-logo">
+                </div>
+                <div class="right-lifecount">
+                    <h1 id="total-life"></h1>
+                </div>
+            </div>
+            <div class="play-box">
+                <div class="left-play-input">
+                    <input type="text" id="user-input" required>
+                </div>
+                <div class="right-play-text">
+                    <h1 id="play-text"></h1>
+                    <div class="submit-answer">
+                        <button id="submit" >submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./backend.js"></script>
+</body>
+
+</html>
