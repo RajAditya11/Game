@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Danfo&family=Jacquard+12&display=swap" rel="stylesheet">
+    <!--   <link href="./style.css" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Chewy&family=Pacifico&family=Press+Start+2P&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Head & Tail </title>
+
+    <style>
+        /*This is universal Selector to deny unwanted default margin and padding.*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 34px;
+        }
+
+        /*Body css*/
+        body {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            background-color: #6A1E55;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Header-Section {
+            margin: 0;
+            padding: 0px 0;
+            position: relative;
+            width: 100%;
+            min-height: auto;
+            text-align: center;
+            z-index: 1000;
+            background-color: #1A1A1D;
+        }
+
+        .text-title {
+            color: #FFF7D1;
+            font-size: 60px;
+            font-family: 'audiowide', sans-serif;
+        }
+
+        .Entire-Display-Section {
+            margin: 10px;
+            margin-top: 80px;
+            margin-bottom: 0px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            width: calc(100%-20px);
+            height: 60vh;
+            box-sizing: border-box;
+        }
+
+        .Left-Display-Section {
+            border: 2px solid slateblue;
+            margin: 15px;
+            padding: 5px;
+            margin-right: 7.5px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #1A2130;
+            width: 50%;
+            height: calc(100%-10px);
+        }
+
+        .Left-Display-text {
+            padding: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 10px;
+            width: calc(100%-20px);
+            height: 80px;
+            background-color: #1A2130;
+            box-sizing: border-box;
+        }
+
+        #playing-text {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 34px;
+        }
+
+        .button-Section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 10px;
+            width: calc(100%-20px);
+            height: auto;
+            background-color: #1A2130;
+            box-sizing: border-box;
+        }
+
+        .Left-Button-Section {
+            margin: 10px 5px 5px 5px;
+            width: 50%;
+            background-color: aqua;
+            height: 80px;
+        }
+
+        .Right-Button-Section {
+            margin: 10px 5px 5px 5px;
+            width: 50%;
+            background-color: aqua;
+            height: 80px;
+        }
+
+        .button-section-btn {
+            font-family: 'audiowide', sans-serif;
+            font-size: 28px;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-click-result {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+        }
+
+        .win-loss-stats {
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: 100px;
+            background-color: #291fa7;
+            box-sizing: border-box;
+        }
+
+        .win-stat {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(13, 132, 49);
+            box-sizing: border-box;
+        }
+
+        .loss-stat {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: rgb(200, 62, 27);
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+
+        /*Right Section */
+
+        .Right-Display-Section {
+            font-family: 'audiowide', sans-serif;
+            border: 2px solid slateblue;
+            font-size: 1em;
+            margin: 15px;
+            padding: 5px;
+            margin-left: 7.5px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #1A2130;
+            width: 50%;
+            height: calc(100%-10px);
+        }
+
+        .tossCoin-message-box {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 0px;
+            margin: 20px;
+            width: auto;
+            background-color: #1A2130;
+            height: 80px;
+        }
+
+        .tossCoin-message {
+            font-family: 'audiowide', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 34px;
+        }
+
+        .toss-coin-button-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .toss-coin-button {
+            font-family: 'audiowide', sans-serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            width: 50%;
+            height: 80px;
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        #output-text-box {
+            margin: 5px;
+            margin-top: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: 60px;
+        }
+
+        /*Footer Section*/
+        .footer-section {
+            border-top: 2px solid slateblue;
+            background-color: #1A2130;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .upper-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1A2130;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #back-to-top {
+            border: 2px solid slateblue;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #1A2130;
+            transform: translateY(-50%);
+        }
+
+        .lower-footer {
+            background-color: #1A2130;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .player-detail-box {
+            width: 65%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding-left: 280px;
+        }
+
+        .player-rating-box {
+            width: 35%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding-left: 180px;
+        }
+
+        hr {
+            border: 0;
+            background: white;
+            height: 3.5px;
+            margin: 5px 50px 5px 50px;
+        }
+
+        /*Font Styles*/
+
+        /* audiowide Font Class*/
+        .audiowide-regular {
+            font-family: "Audiowide", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* press-start-2p Font Class*/
+        .press-start-2p-regular {
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @media (min-width : 0px) and (max-width:300px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                background-color: #6A1E55;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .Header-Section {
+                margin: 0;
+                padding: 0px 0;
+                position: relative;
+                width: 100%;
+                min-height: auto;
+                text-align: center;
+                z-index: 1000;
+                background-color: #1A1A1D;
+            }
+
+            .text-title {
+                color: #FFF7D1;
+                font-size: 24px;
+                font-family: 'audiowide', sans-serif;
+            }
+
+            .Entire-Display-Section {
+                margin: 10px;
+                margin-top: 40px;
+                margin-bottom: 0px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: calc(100%-20px);
+                height: 60vh;
+                box-sizing: border-box;
+            }
+
+            .Left-Display-Section {
+                border: 2px solid slateblue;
+                margin: 15px;
+                padding: 5px;
+                margin-right: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+            }
+
+            .Left-Display-text {
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: 20px;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            #playing-text {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 10px;
+            }
+
+            .button-Section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: auto;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            .Left-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 30px;
+            }
+
+            .Right-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 30px;
+            }
+
+            .button-section-btn {
+                display: flex;
+                font-family: 'audiowide', sans-serif;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .button-click-result {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .win-loss-stats {
+                margin: 15px;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                height: 40px;
+                background-color: #291fa7;
+                box-sizing: border-box;
+            }
+
+            .win-stat {
+                font-family: 'audiowide', sans-serif;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                background-color: rgb(13, 132, 49);
+                box-sizing: border-box;
+            }
+
+            .loss-stat {
+                font-family: 'audiowide', sans-serif;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background-color: rgb(200, 62, 27);
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .Right-Display-Section {
+                font-family: 'audiowide', sans-serif;
+                border: 2px solid slateblue;
+                font-size: 1em;
+                margin: 15px;
+                padding: 5px;
+                margin-left: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+                margin-bottom: 20px;
+            }
+
+
+            .tossCoin-message-box {
+                font-family: 'audiowide', sans-serif;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 0px;
+                margin: 10px;
+                width: auto;
+                background-color: #1A2130;
+                height: 30px;
+            }
+
+            .tossCoin-message {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 10px;
+            }
+
+            .toss-coin-button-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 5px;
+                width: 100%;
+            }
+
+            .toss-coin-button {
+                font-family: 'audiowide', sans-serif;
+                color: rgb(0, 0, 0);
+                text-align: center;
+                width: 50%;
+                height: 30px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+            #output-text-box {
+                margin: 5px;
+                margin-top: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 30px;
+            }
+
+            .upper-footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #1A2130;
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #back-to-top {
+                border: 2px solid slateblue;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                background-color: #1A2130;
+                transform: translateY(-50%);
+            }
+
+            .lower-footer {
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+
+            /*Footer Section*/
+            .footer-section {
+                border-top: 2px solid slateblue;
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            .player-detail-box {
+                width: 65%;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 10px;
+            }
+
+            .player-rating-box {
+                width: 35%;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 0px;
+            }
+
+            .player-name {
+                font-size: 10px;
+            }
+
+            .player-rating {
+                font-size: 10px;
+            }
+        }
+
+
+        @media (min-width: 300px) and (max-width:560px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                background-color: #6A1E55;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .Header-Section {
+                margin: 0;
+                padding: 0px 0;
+                position: relative;
+                width: 100%;
+                min-height: auto;
+                text-align: center;
+                z-index: 1000;
+                background-color: #1A1A1D;
+            }
+
+            .text-title {
+                color: #FFF7D1;
+                font-size: 28px;
+                font-family: 'audiowide', sans-serif;
+            }
+
+            .Entire-Display-Section {
+                margin: 10px;
+                margin-top: 40px;
+                margin-bottom: 0px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: calc(100%-20px);
+                height: 60vh;
+                box-sizing: border-box;
+            }
+
+            .Left-Display-Section {
+                border: 2px solid slateblue;
+                margin: 15px;
+                padding: 5px;
+                margin-right: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+            }
+
+            .Left-Display-text {
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: 40px;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            #playing-text {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+            }
+
+            .button-Section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: auto;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            .Left-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 60px;
+            }
+
+            .Right-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 60px;
+            }
+
+            .button-section-btn {
+                font-family: 'audiowide', sans-serif;
+                font-size: 20px;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .button-click-result {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .win-loss-stats {
+                margin: 15px;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                height: 80px;
+                background-color: #291fa7;
+                box-sizing: border-box;
+            }
+
+            .win-stat {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                background-color: rgb(13, 132, 49);
+                box-sizing: border-box;
+            }
+
+            .loss-stat {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background-color: rgb(200, 62, 27);
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .Right-Display-Section {
+                font-family: 'audiowide', sans-serif;
+                border: 2px solid slateblue;
+                font-size: 1em;
+                margin: 15px;
+                padding: 5px;
+                margin-left: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+                margin-bottom: 40px;
+            }
+
+
+            .tossCoin-message-box {
+                font-family: 'audiowide', sans-serif;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 0px;
+                margin: 20px;
+                width: auto;
+                background-color: #1A2130;
+                height: 60px;
+            }
+
+            .tossCoin-message {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+            }
+
+            .toss-coin-button-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .toss-coin-button {
+                font-family: 'audiowide', sans-serif;
+                color: rgb(0, 0, 0);
+                text-align: center;
+                width: 50%;
+                height: 60px;
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            #output-text-box {
+                margin: 5px;
+                margin-top: 85px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 60px;
+            }
+
+
+            /*Footer Section*/
+            .footer-section {
+
+                border-top: 2px solid slateblue;
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            .upper-footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #1A2130;
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .back-to-top {
+                width: 60px;
+                height: 60px;
+                background-color: #1A1A1D;
+            }
+
+            .lower-footer {
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            .player-detail-box {
+                width: 65%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 40px;
+            }
+
+            .player-rating-box {
+                width: 35%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 0px;
+            }
+
+            .player-name {
+                font-size: 18px;
+            }
+
+            .player-rating {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 560px) and (max-width: 930px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                background-color: #6A1E55;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .Header-Section {
+                margin: 0;
+                padding: 0px 0;
+                position: relative;
+                width: 100%;
+                min-height: auto;
+                text-align: center;
+                z-index: 1000;
+                background-color: #1A1A1D;
+            }
+
+            .text-title {
+                color: #FFF7D1;
+                font-size: 45px;
+                font-family: 'audiowide', sans-serif;
+            }
+
+            .Entire-Display-Section {
+                margin: 10px;
+                margin-top: 40px;
+                margin-bottom: 0px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: calc(100%-20px);
+                height: 60vh;
+                box-sizing: border-box;
+            }
+
+            .Left-Display-Section {
+                border: 2px solid slateblue;
+                margin: 15px;
+                padding: 5px;
+                margin-right: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+            }
+
+            .Left-Display-text {
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: 40px;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            #playing-text {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+            }
+
+            .button-Section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: auto;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            .Left-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 60px;
+            }
+
+            .Right-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 60px;
+            }
+
+            .button-section-btn {
+                font-family: 'audiowide', sans-serif;
+                font-size: 20px;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .button-click-result {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .win-loss-stats {
+                margin: 15px;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                height: 80px;
+                background-color: #291fa7;
+                box-sizing: border-box;
+            }
+
+            .win-stat {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                background-color: rgb(13, 132, 49);
+                box-sizing: border-box;
+            }
+
+            .loss-stat {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background-color: rgb(200, 62, 27);
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .Right-Display-Section {
+                font-family: 'audiowide', sans-serif;
+                border: 2px solid slateblue;
+                font-size: 1em;
+                margin: 15px;
+                padding: 5px;
+                margin-left: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+                margin-bottom: 40px;
+            }
+
+
+            .tossCoin-message-box {
+                font-family: 'audiowide', sans-serif;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 0px;
+                margin: 20px;
+                width: auto;
+                background-color: #1A2130;
+                height: 60px;
+            }
+
+            .tossCoin-message {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+            }
+
+            .toss-coin-button-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .toss-coin-button {
+                font-family: 'audiowide', sans-serif;
+                color: rgb(0, 0, 0);
+                text-align: center;
+                width: 50%;
+                height: 60px;
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            #output-text-box {
+                margin: 5px;
+                margin-top: 85px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 60px;
+            }
+
+
+            /*Footer Section*/
+            .footer-section {
+                display: flex;
+                border-top: 4px solid slateblue;
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .upper-footer {
+                align-items: center;
+                justify-content: center;
+                background-color: #1A2130;
+                width: 100%;
+                height: 120px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #back-to-top {
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                width: 120px;
+                height: 120px;
+                background-color: #1A2130;
+                transform: translateY(-50%);
+                border: 4px solid slateblue;
+            }
+
+            .lower-footer {
+                background-color: #1A2130;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .player-detail-box {
+                width: 65%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 40px;
+            }
+
+            .player-rating-box {
+                width: 35%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 0px;
+            }
+
+            .player-name {
+                font-size: 28px;
+            }
+
+            .player-rating {
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 1800px) and (max-width: 2262px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                background-color: #6A1E55;
+                color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .Header-Section {
+                margin: 0;
+                padding: 0px 0;
+                position: relative;
+                width: 100%;
+                min-height: auto;
+                text-align: center;
+                z-index: 1000;
+                background-color: #1A1A1D;
+            }
+
+            .text-title {
+                color: #FFF7D1;
+                font-size: 180px;
+                font-family: 'audiowide', sans-serif;
+            }
+
+            .Entire-Display-Section {
+                margin: 60px;
+                margin-top: 160px;
+                margin-bottom: 0px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: calc(100%-20px);
+                height: 60vh;
+                box-sizing: border-box;
+            }
+
+            .Left-Display-Section {
+                border: 2px solid slateblue;
+                margin: 15px;
+                padding: 155px;
+                margin-right: 15px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+            }
+
+            .Left-Display-text {
+                margin-bottom:40px ;
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 10px;
+                width: calc(100%-20px);
+                height: 90px;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            #playing-text {
+                margin-bottom:60px ;
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 100px;
+            }
+
+            .button-Section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 150px;
+                width: calc(100%-20px);
+                height: auto;
+                background-color: #1A2130;
+                box-sizing: border-box;
+            }
+
+            .Left-Button-Section {
+                margin: 10px 5px 55px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 150px;
+            }
+
+            .Right-Button-Section {
+                margin: 10px 5px 5px 5px;
+                width: 50%;
+                background-color: aqua;
+                height: 150px;
+            }
+
+            .button-section-btn {
+                font-family: 'audiowide', sans-serif;
+                font-size: 80px;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .button-click-result {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .win-loss-stats {
+                font-size: 80px;
+                margin: 30px 150px 30px 150px;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                height: 150px;
+                background-color: #291fa7;
+                box-sizing: border-box;
+            }
+
+            .win-stat {
+                font-size: 80px;
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                background-color: rgb(13, 132, 49);
+                box-sizing: border-box;
+            }
+
+            .loss-stat {
+                font-size: 40px;
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background-color: rgb(200, 62, 27);
+                width: 50%;
+                box-sizing: border-box;
+            }
+            #winningTotal , #loosingTotal{
+                font-size: 6rem;        
+            }
+
+            .Right-Display-Section {
+                font-family: 'audiowide', sans-serif;
+                border: 2px solid slateblue;
+                font-size: 1em;
+                margin: 50px 5px 50px 5px;
+                padding: 5px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1A2130;
+                width: 100%;
+                height: calc(100%-10px);
+                margin-bottom: 40px;
+            }
+
+            .tossCoin-message-box {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                margin: 60px 0px 60px 0px;
+                padding: 0px;
+                width: 100%;
+                background-color: #1A2130;
+                height: auto;
+            }
+
+            .tossCoin-message {
+                font-family: 'audiowide', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 100px;
+            }
+
+            .toss-coin-button-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                width: 100%;
+                height: auto;
+            }
+
+            .toss-coin-button {
+                font-family: 'audiowide', sans-serif;
+                color: rgb(0, 0, 0);
+                text-align: center;
+                width: 50%;
+                height: 150px;
+                cursor: pointer;
+                font-size: 80px;
+            }
+
+            #output-text-box {
+                margin: 5px;
+                margin-top: 85px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: 150px;
+                font-size: 100px;
+            }
+
+
+            /*Footer Section*/
+            .footer-section {
+                display: flex;
+                border-top: 5px solid slateblue;
+                background-color: #1A2130;
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .upper-footer {
+                align-items: center;
+                justify-content: center;
+                background-color: #1A2130;
+                width: 100%;
+                height: 340px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #back-to-top {
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                width: 340px;
+                height: 340px;
+                background-color: #1A2130;
+                transform: translateY(-50%);
+                border: 4px solid slateblue;
+            }
+
+            .lower-footer {
+                background-color: #1A2130;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .player-detail-box {
+                width: 65%;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 40px;
+            }
+
+            .player-rating-box {
+                width: 35%;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 0px;
+            }
+
+            .player-name {
+                font-size: 80px;
+            }
+
+            .player-rating {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header-Section">
+        <h1 class="text-title "> Flip The Coin </h1>
+    </div>
+
+
+    <div class="Entire-Display-Section">
+
+        <div class="Left-Display-Section">
+            <div class="Left-Display-text">
+                <play-text id="playing-text">Choose Head or Tail !</play-text>
+            </div>
+
+            <div class="button-Section">
+                <div class="Left-Button-Section">
+                    <button onclick="playGame(`Head`)" class="button-section-btn"> Head </button>
+                </div>
+
+                <div class="Right-Button-Section">
+                    <button onclick="playGame(`Tail`)" class="button-section-btn "> Tail </button>
+                </div>
+            </div>
+
+            <div class="button-click-result">
+                <h1 id="win-loose-text"></h1>
+            </div>
+
+            <div class="win-loss-stats">
+
+                <div class="win-stat">
+                    <h1 id="winningTotal">Win :</h1>
+                </div>
+
+                <div class="loss-stat">
+                    <h1 id="loosingTotal">Loss :</h1>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="Right-Display-Section">
+
+            <div class="tossCoin-message-box chewy-regular">
+                <h1 class="tossCoin-message"> Toss the Coin !</h1>
+            </div>
+            <div class="toss-coin-button-section">
+                <button onclick="tossCoin(`decideTime`)" class="toss-coin-button"> Toss </button>
+            </div>
+
+
+            <div id="output-text-box">
+                <h1 class="output-text .audiowide-regular"></h1>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+
+            <div class="lower-footer">
+                <div class="player-detail-box">
+                    <h1 class="player-name">Player Name</h1>
+                </div>
+
+                <div class="player-rating-box">
+                    <h1 class="player-rating"> </h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //JavaScript Hand Written Code
+        let playername = prompt('What is Player Name ?');
+        if (playername === null || playername === "") {
+            playername = 'New-Player'
+        }
+        console.log(playername)
+
+        document.querySelector('.player-name').textContent = `${playername}`;
+        // document.getElementsByClassName('player-name')[0].textContent = `${playername}`; { Not Appropriate in Modern JavaScript}
+
+        const playergrade = undefined;
+
+        // Arrow Function  { const functionName = ()=>{}; }
+        const tossCoin = (code) => {
+            let output = undefined;
+            const val = Math.random();
+            val >= 0.45 ? output = 'Head' : output = 'Tail';
+
+            if (code === `playTime`) {
+                return `${output}`;
+            } else if (code === `decideTime`) {
+                document.querySelector('.output-text').textContent = `${output}`;
+            }
+            console.log(output);
+        };
+
+        const assignValue = (winCount, lossCount) => {
+            document.querySelector('#winningTotal').textContent = `Win : ${winCount}`;
+            document.querySelector('#loosingTotal').textContent = `Loss : ${lossCount}`;
+        };
+        let winCount = 0;
+        let lossCount = 0;
+
+        const gradeSystem = (winCount, lossCount) => {
+            if (winCount > lossCount) {
+                document.querySelector('.player-rating').textContent = `Winner`;
+            } else {
+                document.querySelector('.player-rating').textContent = `Looser`;
+            }
+        };
+
+
+        const playGame = (playerChoice) => {
+            let gameChoice = tossCoin(`playTime`);
+
+            console.log(gameChoice);
+
+            if (playerChoice === gameChoice) {
+                document.querySelector('#win-loose-text').textContent = `You Win!`
+                winCount++;
+                gradeSystem(winCount, lossCount);
+            } else {
+                document.querySelector('#win-loose-text').textContent = `You Loose!`
+                lossCount++;
+                gradeSystem(winCount, lossCount);
+            }
+
+            assignValue(winCount, lossCount);
+        };
+    </script>
+</body>
+
+
+</html>
