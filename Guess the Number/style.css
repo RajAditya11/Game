@@ -92,6 +92,7 @@ main{
     width: 67%;
     height: auto;
     padding: 10px;
+    border: 2px dashed black;
 }
 
 .range-text-box{
@@ -148,53 +149,41 @@ main{
     justify-content: center;
     align-items: center;
 }
-.play-box{
+.one-box{
     width: 100%;
     height: 300px;
     display: flex;
-    flex-direction: row;
-}
-.left-play-input{
-    padding: 5px;
-    display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: column;
-    align-items:flex-start;
-    justify-content: end;
-    width: 50%;
-    height: 100%;
-    border-top: 2px dashed black;
-    border-left: 2px dashed black;
+    border: 2px dashed black;
+}
+#play-text{
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 #user-input{
+    padding: 20px;
     width: 33%;
-    height: 60px;
-    text-align: center;
+    height: 50px;
     font-size: 2rem;
     font-family: "Poppins",cursive;
 }
-.right-play-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-    height: 100%;
-}
-#play-text{
-    width: 100%;
-    text-align: center;
-    border: 2px dashed black;
-}
 .submit-answer{
+    padding: 20px;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    height: auto;
 }
 #submit{
+    text-align: center;
     width: 50%;
-    height: 38px;
+    height: 100%;
     font-family: "Poppins",sans-serif;
     font-size: 1.2rem;
     font-weight: 800;
