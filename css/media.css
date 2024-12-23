@@ -27,7 +27,36 @@
     }
 }
 
-@media (min-width:1800px){
+@media (min-width:768px) and (max-width:1200px){
+    .header{
+        padding: 5px 10px;
+        margin-bottom: 30px;
+    }
+    #header-text{
+        font-size: 3.5rem;
+        font-weight: 400;
+    }
+    .game-section{
+        width: 100%;
+        margin: 0px;
+        padding: 0px 80px;
+        flex-direction: column;
+    }
+    .game-box{
+        user-select: none;
+        width: 100%;
+        height: auto;
+        padding: 10px 10px;
+        margin-top: 10px ;
+        margin-bottom: 10px;
+    }
+    .game-text{
+        padding: 10px 0px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width:2200px){
     .header{
         padding: 35px 10px;
         margin-bottom: 30px;
